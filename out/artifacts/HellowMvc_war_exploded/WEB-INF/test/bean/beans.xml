@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd">
+       <!--<beans profile="dev">-->
+              <!--#1-->
+              <bean id="myTestBean" class="com.spring.mvc.test.bean.MyTestBean">
+                     <meta key="teststr" value="aaaa"></meta>
+              </bean>
+              <!--#2-->
+              <bean id="getBeanTest" class="com.spring.mvc.test.bean.GetBeanTest">
+                     <lookup-method name="getBean" bean="teacher"></lookup-method>
+              </bean>
+              <bean id="teacher" class="com.spring.mvc.test.bean.Teacher">
+              </bean>
+              <bean id="student" class="com.spring.mvc.test.bean.Student">
+              </bean>
+              <!--#3-->
+              <bean id="testChangeMethod" class="com.spring.mvc.test.bean.TestChangeMethod">
+                     <replaced-method name="changeMe" replacer="replacer"></replaced-method>
+              </bean>
+              <bean id="replacer" class="com.spring.mvc.test.bean.TestMethodReplacer">
+              </bean>
+              <!--#4-->
+              <bean id="con" class="com.spring.mvc.test.bean.ConStructor">
+                     <constructor-arg index="0" name="name">
+                            <value>王佩</value>
+                     </constructor-arg>
+                     <constructor-arg index="1" type="java.lang.String">
+                            <value>你好</value>
+                     </constructor-arg>
+              </bean>
+              <!--#5-->
+              <bean id="pro" class="com.spring.mvc.test.bean.Property">
+                     <property name="id" value="1"></property>
+                     <property name="name" value="teacher"></property>
+              </bean>
+              <bean id="car" class="com.spring.mvc.test.bean.CarFactoryBean">
+                     <property name="carInfo" value="超级跑车,400,20000"></property>
+              </bean>
+     <!--  </beans>-->
+</beans>
