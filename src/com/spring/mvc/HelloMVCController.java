@@ -1,6 +1,6 @@
 package com.spring.mvc;
 
-import com.spring.mvc.test.bean.BeanFactoryTest;
+import com.spring.mvc.test.bean.Default.BeanFactoryTest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
